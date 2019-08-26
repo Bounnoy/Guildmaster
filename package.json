@@ -1,0 +1,32 @@
+{
+  "name": "guildmaster-discord-bot",
+  "version": "0.1.0",
+  "description": "A Discord bot for guilds to stay organized.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && babel -d ./build ./src -s",
+    "start": "npm run build && node ./build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bounnoy/Guildmaster.git"
+  },
+  "author": "Bounnoy Phanthavong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bounnoy/Guildmaster/issues"
+  },
+  "homepage": "https://github.com/Bounnoy/Guildmaster#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "fb": "^2.0.0",
+    "mongodb": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5"
+  }
+}
