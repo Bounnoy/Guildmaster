@@ -1,0 +1,18 @@
+{
+	"auth": {
+		"discord": {
+			"token": ""
+		},
+		"facebook": {
+			"clientId": ""
+			"clientSecret": ""
+		}
+	},
+  "allowedCommandPrefixes": ["!", "+", "$"],
+  "database": {
+    "type": "mongo",
+    "mongo": {
+      "connectionURL": "mongodb://localhost:27017"
+    }
+  }
+}
