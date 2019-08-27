@@ -1,7 +1,25 @@
 import Discord from 'discord.js';
 import Config from '../config.json';
+import { MongoClient } from 'mongodb';
 
 const bot = new Discord.Client();
+let DB;
+
+function connectToMongoDB() {
+  const dbType = Config.database.type;
+  const url = Config.database[dbType].connectionURL;
+
+  return new Promise((resolve, reject) => {
+    MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (error, db) => {
+      if (error) {
+        reject(error);
+      } else {
+        DB = db;
+        resolve();
+      }
+    });
+  });
+}
 
 // This checks a message to see if a command is being triggered.
 // Return a dictionary with 2 fields:
@@ -66,6 +84,7 @@ bot.on('message', msg => {
 
 Promise
   .all([
+    connectToMongoDB()
   ])
   .then(() => {
     bot.login(Config.auth.discord.token);
