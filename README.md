@@ -2,6 +2,9 @@
 
 A [Discord](https://discordapp.com) bot using [Discord.js](https://discord.js.org). This was a personal project of mine that I created for the many different games I've played to keep myself up-to-date with gaming news, events, and some other tools I've found helpful and other members of my guild(s) found helpful. I've had several people ask me about it so I decided to open source the project so others can benefit.
 
+## Features
+
+- **Message Commands**: Detect a command in your channel and have it map to a function with the same name.
 
 ## Getting Started
 
